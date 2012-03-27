@@ -73,6 +73,7 @@ class ModuleManager():
         self.mcore['cfg'] = self.cfg
 
         self.mcore['connection'] = connection.Connection(
+                self.cfg.get('connection','host'),
                 self.cfg.get('connection','nick'),
                 self.cfg.get('connection','ident'),
                 self.cfg.get('connection','name'),
