@@ -49,6 +49,11 @@ class Connection():
     def connect(self):
         
         self.irc = socket.socket()
+        
+        if self.ipaddr:
+    	    try: self.irc.bind((self.ipaddr, self.port))
+		    except: pass
+        
         self.irc.connect((self.server, self.port))
         self.irc.send(u'NICK %s\n' % (self.nick))
         self.irc.send(u'USER %s %s bla :%s\n' % (self.ident, self.server, self.name))
