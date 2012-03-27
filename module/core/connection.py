@@ -21,7 +21,7 @@ class Connection():
     '''
     
     
-    def __init__(self, nick, ident, name, server, port, channels):
+    def __init__(self, ipaddr, nick, ident, name, server, port, channels):
         '''
         Construct a connection ready to connect to an IRC server.
         
@@ -30,6 +30,8 @@ class Connection():
         ident -- the bot's ident
         name  -- the bot's real name
         '''
+        
+        self.ipaddr = ipaddr
         self.nick = nick
         self.ident = ident
         self.name = name
