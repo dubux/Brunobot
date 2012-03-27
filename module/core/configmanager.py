@@ -36,6 +36,10 @@ class BrunobotConfig():
     
     def printConfig(self):
         print " .. Configuration [connection]"
+
+        if self.get('connection', 'host'):
+    	    print " ..    ip address: %s" % (self.get('connection', 'host'))
+        
         print " ..        server:   %s (%s)" % (self.get('connection','server'),self.get('connection','port'))
         print " ..          nick:   %s (%s, %s)" % (self.get('connection','nick'),
                                             self.get('connection','ident'),
